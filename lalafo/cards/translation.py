@@ -4,7 +4,7 @@ from .models import Category
 
 
 class CategoryTranslation(TranslationOptions):
-    fields = ("name", )
+    fields = ("name",)
+
 
 translator.register(Category, CategoryTranslation)
-
