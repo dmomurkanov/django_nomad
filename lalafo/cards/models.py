@@ -37,6 +37,7 @@ class ItemImages(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name='item_images')
     image = models.ImageField('Изображение', upload_to='item')
     image_mobile = models.ImageField('Изображение', upload_to='item')
+    order = models.PositiveIntegerField('Порядок', default=0)
 
     class Meta:
         verbose_name = 'Изображение товара'
