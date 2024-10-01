@@ -42,7 +42,7 @@ class ItemImages(models.Model):
 
     class Meta:
         verbose_name = 'Изображение товара'
-        verbose_name_plural = 'Изображения товаsров'
+        verbose_name_plural = 'Изображенsия товаsров'
         ordering = ['order']
 
     def __str__(self):
