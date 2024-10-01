@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==5.1.1
+django-cuser==2017.3.16
+django-modeltranslation==0.19.9
+django-tinymce==4.1.0
+pillow==10.4.0
+sqlparse==0.5.1
+typing_extensions==4.12.2
