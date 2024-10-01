@@ -1,0 +1,6 @@
+adminsortable2
+dist
+docs
+node_modules
+parler_example
+patches

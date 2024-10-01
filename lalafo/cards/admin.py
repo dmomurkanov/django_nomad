@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Category, Item, ItemImages
 from modeltranslation.admin import TabbedTranslationAdmin
-
+from .models import Category, Item, ItemImages
+from adminsortable2.admin import SortableAdminMixin
 
 @admin.register(Category)
-class CategoryAdmin(TabbedTranslationAdmin,):
+class CategoryAdmin(TabbedTranslationAdmin, SortableAdminMixin, admin.ModelAdmin):
     pass
 
 class ItemImagesInline(admin.StackedInline):
