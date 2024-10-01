@@ -6,3 +6,4 @@ django-tinymce==4.1.0
 pillow==10.4.0
 sqlparse==0.5.1
 typing_extensions==4.12.2
+django-admin-sortable2==2.2.3
