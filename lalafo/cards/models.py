@@ -1,5 +1,7 @@
 from django.db import models
 
+from django_nomad.lalafo.cards.utils import CONDITION_CHOICES, CAR_BODY
+
 
 class Category(models.Model):
     name = models.CharField('Название категории', max_length=50)
@@ -45,4 +47,11 @@ class ItemImages(models.Model):
         ordering = ('order',)
 
     def __str__(self):
-        return f'Изоброжение - {self.item.title}'
+        return f'Изображение - {self.item.title}'
+
+
+class ItemParameters(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='parameters')
+    condition = models.CharField('Состояние', choices=CONDITION_CHOICES)
+    car_body = models.CharField('Кузов', max_length=255, choices=CAR_BODY)
+    mileage = models.IntegerField('Пробег', defalut=0)
