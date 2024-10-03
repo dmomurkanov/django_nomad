@@ -20,7 +20,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 
 @admin.register(ItemImages)
-class ItemImagesAdmin(admin.ModelAdmin, SortableAdminMixin):
+class ItemImagesAdmin(SortableAdminMixin, admin.ModelAdmin):
     pass
 
 

@@ -1,8 +1,11 @@
-CONDITION_CHOICES = {
-    ('Новый', 'new'),
-    ('Б/У', 'used'),
-}
+CONDITION_CHOICES = [
+    ('Новый', 'New'),
+    ('Б/У', 'Used'),
+]
 
-CAR_BODY = {
-    ('Минивен', 'Седан'),
-}
+
+CAR_BODY = [
+    ('Седан', 'Sedan'),
+    ('Хэтчбек', 'Hatchback'),
+    ('Внедорожник', 'SUV'),
+]

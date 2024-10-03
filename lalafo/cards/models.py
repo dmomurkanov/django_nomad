@@ -1,6 +1,5 @@
 from django.db import models
-
-from django_nomad.lalafo.cards.utils import CONDITION_CHOICES, CAR_BODY
+from .utils import CONDITION_CHOICES, CAR_BODY
 
 
 class Category(models.Model):
@@ -22,9 +21,9 @@ class Item(models.Model):
     title = models.CharField('Заголовок', max_length=255, null=True)
     price = models.CharField('Цена', max_length=20)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='item')
-    description = models.TextField('Описание', )
+    description = models.TextField('Описание')
     is_like = models.BooleanField('Нравится', default=False)
-    created_at = models.DateTimeField('Время создания')
+    created_at = models.DateTimeField('Время создания', auto_now_add=True)
 
     class Meta:
         verbose_name = 'Товар'
@@ -51,7 +50,11 @@ class ItemImages(models.Model):
 
 
 class ItemParameters(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='parameters')
-    condition = models.CharField('Состояние', choices=CONDITION_CHOICES)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_parameters')
+    condition = models.CharField('Состояние', choices=CONDITION_CHOICES, max_length=50)
     car_body = models.CharField('Кузов', max_length=255, choices=CAR_BODY)
-    mileage = models.IntegerField('Пробег', defalut=0)
+    mileage = models.IntegerField('Пробег', default=0)
+
+    class Meta:
+        verbose_name = 'Параметры товара'
+        verbose_name_plural = 'Параметры товаров'
