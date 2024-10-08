@@ -1,4 +1,5 @@
 from django.db import models
+from .utilts import CONDITION_CHOICES, CAR_BODY
 
 
 class Category(models.Model):
@@ -44,3 +45,9 @@ class ItemImages(models.Model):
 
     def __str__(self):
         return f'Изоброжение - {self.item.title}'
+
+class ItemParameters(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='parameters')
+    condition = models.CharField('Состояние', max_length=255, choices=CONDITION_CHOICES)
+    car_body = models.CharField('Кузов', max_length=255, choices=CAR_BODY)
+    mileage = models.IntegerField('Пробег', default=0)
