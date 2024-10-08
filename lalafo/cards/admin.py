@@ -3,7 +3,8 @@ from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
 from adminsortable2.admin import SortableAdminMixin
 
-from .models import Category, Item, ItemImages
+from .models import Category, Item, ItemImages, ItemParameters
+
 
 @admin.register(Category)
 class CategoryAdmin(SortableAdminMixin, TabbedTranslationAdmin,):
@@ -21,3 +22,8 @@ class ItemAdmin(admin.ModelAdmin, SortableAdminMixin):
 @admin.register(ItemImages)
 class ItemImagesAdmin(admin.ModelAdmin, SortableAdminMixin):
     pass
+
+@admin.register(ItemParameters)
+class ItemParametersAdmin(admin.ModelAdmin):
+    pass
+

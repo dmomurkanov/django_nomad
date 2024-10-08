@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     #library
     "adminsortable2",
-
+    "rest_framework",
     #apps
     "cards",
 ]
