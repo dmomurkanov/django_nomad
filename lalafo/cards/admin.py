@@ -1,10 +1,13 @@
 from django.contrib import admin
-from .models import Category, Item, ItemImages
+
 from modeltranslation.admin import TabbedTranslationAdmin
+from adminsortable2.admin import SortableAdminMixin
+
+from .models import Category, Item, ItemImages, ItemParameters
 
 
 @admin.register(Category)
-class CategoryAdmin(TabbedTranslationAdmin,):
+class CategoryAdmin(SortableAdminMixin, TabbedTranslationAdmin,):
     pass
 
 class ItemImagesInline(admin.StackedInline):
@@ -12,10 +15,15 @@ class ItemImagesInline(admin.StackedInline):
     extra = 0
 
 @admin.register(Item)
-class ItemAdmin(admin.ModelAdmin):
+class ItemAdmin(admin.ModelAdmin, SortableAdminMixin):
     inlines = (ItemImagesInline,)
 
 
 @admin.register(ItemImages)
-class ItemImagesAdmin(admin.ModelAdmin):
+class ItemImagesAdmin(admin.ModelAdmin, SortableAdminMixin):
     pass
+
+@admin.register(ItemParameters)
+class ItemParametersAdmin(admin.ModelAdmin):
+    pass
+
