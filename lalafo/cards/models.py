@@ -8,7 +8,7 @@ from .utils import CONDITION_CHOICES, CAR_BODY, WHEEL_LOCATION
 class Category(models.Model):
     name = models.CharField('Название категории', max_length=50)
     icon = models.ImageField('Иконка', upload_to='category/icon')
-    icon_mobile = models.ImageField('Иконка', upload_to='category/icon_mobile')
+    icon_mobile = models.ImageField('Иконка для мобилки', upload_to='category/icon_mobile')
     order = models.PositiveIntegerField(default=0, )
 
     class Meta:
@@ -27,6 +27,7 @@ class Item(models.Model):
     description = models.TextField('Описание',)
     is_like = models.BooleanField('Нравится', default=False)
     created_at = models.DateTimeField('Время создания')
+    url = models.CharField('Ссылка в лалафо', max_length=1000, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Товар'

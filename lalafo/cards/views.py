@@ -19,3 +19,15 @@ class ItemDetailViewSet(generics.ListAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemDetailSerializer
 
+
+def category_get(request):
+    categories = Category.objects.all()
+    items = Item.objects.all()
+    return render(
+        request,
+        "cards.html",
+        {
+            "categories": categories,
+            "items": items
+        })
+
