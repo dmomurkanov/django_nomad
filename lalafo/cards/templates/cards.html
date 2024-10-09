@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li:nth-child(odd) {
+            background-color: #ecf0f1;
+        }
+
+        li:hover {
+            background-color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Категория</h1>
+    <ul>
+        {% for category in categories %}
+        <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Товары</h1>
+    <ul>
+        {% for item in items %}
+        <li>Название товара: {{ item.title }}</li>
+        <li>Цена товара: {{ item.price }}</li>
+        <li>Описание товара: {{ item.description }}</li>
+        <button>
+            <a href={{item.url}}>Кнопка</a>
+        </button>
+        {% endfor %}
+    </ul>
+</body>
+</html>
