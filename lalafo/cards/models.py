@@ -22,6 +22,7 @@ class Category(models.Model):
 
 class Item(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='item')
+    image = models.ImageField("Изображение", upload_to='items', null=True)
     title = models.CharField('Заголовок', max_length=255, null=True)
     price = models.CharField('Цена', max_length=20)
     description = models.TextField('Описание',)
