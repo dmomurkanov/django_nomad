@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    #library
+    "adminsortable2",
+    "rest_framework",
+    #apps
     "cards",
 ]
 
@@ -56,7 +61,7 @@ ROOT_URLCONF = "lalafo.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR,],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

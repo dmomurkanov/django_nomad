@@ -7,4 +7,3 @@ class CategoryTranslation(TranslationOptions):
     fields = ("name", )
 
 translator.register(Category, CategoryTranslation)
-
