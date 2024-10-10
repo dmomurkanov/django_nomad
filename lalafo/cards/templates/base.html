@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>Категория</h1>
+    <ul>
+        {% for category in categories %}
+        <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Товары</h1>
+    <ul>
+        {% for item in items %}
+        <li>Название товара: {{ item }}</li>
+        <li>Цена товара: {{ item.price }}</li>
+        <li>Описание товара: {{ item.description }}</li>
+        <button>
+            <a href={{item.url}}>Кнопка</a>
+        </button>
+        {% endfor %}
+    </ul>
+</body>
+</html>
